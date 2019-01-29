@@ -1,0 +1,69 @@
+@import '_variables';
+
+html {
+    background: url('../../img/battle-stations.jpg');
+    background-size: cover;
+    // background-position: top -100px right 0;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+body,
+main {
+    background: transparent;
+}
+
+// Fluid Typography
+html {
+    font-size: 16px;
+}
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: calc(8px + 6 * ((100vw - 320px) / 680));
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    html {
+        font-size: 18px;
+    }
+}
+// End of Fluid Typography
+
+
+// Jumbotron
+.jumbotron {
+    background: transparent;
+}
+
+.jumbotron h1, .jumbotron p.subtitle {
+    background: $black;
+    color: $white;
+    padding: 15px;
+}
+
+// Jumbotron Sizes
+@media (min-width: 320px) { 
+    .jumbotron {
+        min-height: 300px;
+        padding-top: 125px;
+    }
+}
+
+@media (min-width: 768px) { 
+    .jumbotron {
+        min-height: 600px;
+        padding-top: 250px;
+    }
+}
+
+
+// Button Overides
+
+
+// V Panels
+.v-panel {
+    background: $white;
+}
