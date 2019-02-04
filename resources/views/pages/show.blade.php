@@ -34,22 +34,19 @@
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" v-for="image in {{ $item->images }}" data-slide-to="image.id"></li>
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="{{ asset('img/' . $item->main_image) }}" alt="" class="img-fluid img-thumbnail"
                                     style="border-color: transparent">
                             </div>
-                            <div class="carousel-item">
-                                <img src="{{ asset('img/' . $item->main_image) }}" alt="" class="img-fluid img-thumbnail"
-                                    style="border-color: transparent">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="{{ asset('img/' . $item->main_image) }}" alt="" class="img-fluid img-thumbnail"
-                                    style="border-color: transparent">
-                            </div>
+                            @foreach ($item->images as $image)
+                                <div class="carousel-item">
+                                    <img src="{{ asset('img/' . $image->path) }}" alt="" class="img-fluid img-thumbnail"
+                                        style="border-color: transparent">
+                                </div>    
+                            @endforeach
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

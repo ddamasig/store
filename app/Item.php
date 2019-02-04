@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    //
+    // Relationships
+    public function images() {
+        return $this->hasMany('App\Image');
+    }
 
     // Get the stock phrase
     public function getStockPhrase()

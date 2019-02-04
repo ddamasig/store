@@ -50,7 +50,7 @@ class PagesController extends Controller
     }
 
     public function show($id) {
-        $item = Item::find($id);
+        $item = Item::with('images')->find($id);
 
         return view('pages/show')->with([
             'item' => $item,
